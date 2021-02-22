@@ -1,0 +1,12 @@
+# Files
+.gitignore
+.editorconfig
+Makefile
+*.conf
+*.yml
+*.sh
+
+# Folders
+.git/
+.venv/
+**/node_modules/

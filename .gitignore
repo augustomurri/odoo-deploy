@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Translations
+*.mo
+*.pot
+
+postgres/pgdata
+venv/
+
+
+
+
+
+
