@@ -12,7 +12,8 @@ services:
       - 8069:8069
       - 8072:8072
     volumes:
-      - ./odoo/web-data:/var/lib/odoo:rw
+      - ./odoo/sessions:/var/lib/odoo/sessions
+      - ./odoo/filestore:/var/lib/odoo/filestore
       - ./odoo/addons:/mnt/extra-addons
     depends_on:
       - db
