@@ -15,8 +15,7 @@ certbot-prod:
 								--staging 0
 
 deploy-prod:
-	@mkdir -p ./pgadmin4 ./odoo/web-data
-	@chown -R 101:101 ./odoo/web-data
+	@mkdir -p ./pgadmin4
 	@chown -R 5050:5050 ./pgadmin4
 	@docker-compose \
 					-f docker-compose.yml \
@@ -24,8 +23,7 @@ deploy-prod:
 					up -d --build --force-recreate --remove-orphans
 
 deploy-dev:
-	@mkdir -p ./pgadmin4 ./odoo/web-data
-	@chown -R 101:101 ./odoo/web-data
+	@mkdir -p ./pgadmin4
 	@chown -R 5050:5050 ./pgadmin4
 	@docker-compose \
 					-f docker-compose.yml \
