@@ -8,18 +8,11 @@ services:
     volumes:
       - ./postgres/pgdata:/var/lib/postgresql/data/pgdata
 
-  adminer:
-    image: adminer
-    container_name: odoo-adminer
-    restart: always
-    ports:
-      - 8083:8080
-
   mailhog:
     image: mailhog/mailhog
     container_name: odoo-mailhog
     logging:
-      driver: 'none'
+      driver: 'none'  # disable saving logs
     ports:
       - 1025:1025 # smtp server
       - 8025:8025 # web ui

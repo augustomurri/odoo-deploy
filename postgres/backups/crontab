@@ -1,0 +1,2 @@
+* */6 * * * /BACKUP/backup.sh >> /var/log/cron.log 2>&1
+# Mandatory blank line

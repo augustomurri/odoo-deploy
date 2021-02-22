@@ -146,7 +146,7 @@ for domain in ${!domains[*]}; do
 
 	path="/etc/letsencrypt/live/$domain_name"
 	docker-compose run --rm --entrypoint "openssl req -x509 -nodes -newkey rsa:2048 \
-	-days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" certbot
+	-days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" odoo-certbot
   fi
 done
 
@@ -186,6 +186,6 @@ for domain in ${!domains[*]}; do
 		mkdir -p "$data_path/www"
 
 		docker-compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/html --cert-name $domain_name $domain_args \
-		$staging_arg $email_arg --rsa-key-size $rsa_key_size --agree-tos --force-renewal --non-interactive" certbot
+		$staging_arg $email_arg --rsa-key-size $rsa_key_size --agree-tos --force-renewal --non-interactive" odoo-certbot
 	fi
 done
