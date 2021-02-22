@@ -13,7 +13,7 @@ __pycache__/
 *.mo
 *.pot
 
-postgres/pgdata
+postgres/pgdata/
 venv/
 
 
