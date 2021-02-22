@@ -3,6 +3,8 @@ services:
   odoo:
     image: odoo:14.0
     container_name: odoo-app
+    build:
+      context: ./odoo
     restart: always
     environment:
       - HOST=odoo-db
@@ -12,8 +14,8 @@ services:
       - 8069:8069
       - 8072:8072
     volumes:
-      - ./odoo/sessions:/var/lib/odoo/sessions
-      - ./odoo/filestore:/var/lib/odoo/filestore
+      - ./odoo/sessions:/var/lib/odoo/sessions:rw
+      - ./odoo/filestore:/var/lib/odoo/filestore:rw
       - ./odoo/addons:/mnt/extra-addons
     depends_on:
       - db
